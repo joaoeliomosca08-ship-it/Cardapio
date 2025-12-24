@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardápio de Pizzas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+        
+        h1 {
+            color: #000000;
+            font-size: 2.5em;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            border-bottom: 3px solid #000;
+            padding-bottom: 15px;
+        }
+        
+        .pizza-list {
+            list-style: none;
+        }
+        
+        .pizza-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 15px;
+            margin-bottom: 15px;
+            border: 2px solid #000;
+            border-radius: 10px;
+            background-color: #f8f8f8;
+            transition: all 0.3s ease;
+        }
+        
+        .pizza-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .pizza-name {
+            font-size: 1.4em;
+            font-weight: 900;
+            color: #000;
+        }
+        
+        .pizza-price {
+            font-size: 1.8em;
+            font-weight: 900;
+            color: #000;
+        }
+        
+        .price-symbol {
+            font-size: 0.8em;
+            vertical-align: super;
+        }
+        
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            font-weight: 700;
+            color: #444;
+            padding-top: 20px;
+            border-top: 2px solid #ccc;
+        }
+        
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+            
+            .pizza-name {
+                font-size: 1.2em;
+            }
+            
+            .pizza-price {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🍕 Cardápio de Pizzas</h1>
+        
+        <ul class="pizza-list">
+            <li class="pizza-item">
+                <span class="pizza-name">Portuguesa</span>
+                <span class="pizza-price">R$ <span class="price-number">55</span>,<span class="price-cents">00</span></span>
+            </li>
+            
+            <li class="pizza-item">
+                <span class="pizza-name">4 Queijos</span>
+                <span class="pizza-price">R$ <span class="price-number">60</span>,<span class="price-cents">00</span></span>
+            </li>
+            
+            <li class="pizza-item">
+                <span class="pizza-name">Bacon</span>
+                <span class="pizza-price">R$ <span class="price-number">55</span>,<span class="price-cents">00</span></span>
+            </li>
+            
+            <li class="pizza-item">
+                <span class="pizza-name">Mussarela</span>
+                <span class="pizza-price">R$ <span class="price-number">50</span>,<span class="price-cents">00</span></span>
+            </li>
+            
+            <li class="pizza-item">
+                <span class="pizza-name">Brócolis</span>
+                <span class="pizza-price">R$ <span class="price-number">55</span>,<span class="price-cents">00</span></span>
+            </li>
+            
+            <li class="pizza-item">
+                <span class="pizza-name">Carne Seca</span>
+                <span class="pizza-price">R$ <span class="price-number">55</span>,<span class="price-cents">00</span></span>
+            </li>
+        </ul>
+        
+        <div class="footer">
+            <p>Total: 6 sabores disponíveis</p>
+            <p>⚠️ Preços sujeitos a alteração</p>
+        </div>
+    </div>
+
+    <script>
+        // Efeito de carregamento
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease';
+            
+            setTimeout(function() {
+                document.body.style.opacity = '1';
+            }, 100);
+            
+            // Efeito ao passar o mouse nas pizzas
+            const pizzaItems = document.querySelectorAll('.pizza-item');
+            pizzaItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.backgroundColor = '#fff';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.backgroundColor = '#f8f8f8';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
